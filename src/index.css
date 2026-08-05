@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+a {
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg,#60a5fa,#a855f7);
+  transition: width 0.3s;
+}
+
+a:hover::after {
+  width: 100%;
+}
+@keyframes bounceSlow {
+  0%,100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 4s infinite;
+}
+/* FIRST TEXT */
+
+.animate-fade {
+  animation: fadeText 6s infinite;
+}
+
+/* SECOND TEXT */
+
+.animate-show {
+  animation: showText 6s infinite;
+}
+
+/* HIDE FIRST */
+
+@keyframes fadeText {
+  0% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* SHOW SECOND */
+
+@keyframes showText {
+  0% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
