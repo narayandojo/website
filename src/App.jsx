@@ -24,7 +24,7 @@ import CodingForKidsPage from "./pages/CodingForKidsPage";
 import ArduinoKitPage from "./pages/ArduinoKitPage";
 import AboutPage from "./pages/AboutPage";
 import GhostBadgePage from "./pages/GhostBadgePage";
-import STEMPage from "./pages/STEMPage";   // ✅ keep only this
+import STEMPage from "./pages/StemPage";   // ✅ keep only this
 import DIYPage from "./pages/DIYPage";     // ✅ keep only this
 import JugaadPage from "./pages/JugaadPage";
 import StemKitDetailPage from "./pages/StemKitDetailPage";
