@@ -90,11 +90,21 @@ function Footer() {
           </p>
 
           <p className="text-sm mt-3">
-            +91 98765 43210
+            +91 72480 46685
           </p>
 
           <p className="text-sm mt-4">
-            Instagram | YouTube | Twitter
+            <a href="https://instagram.com/narayandojo" target="_blank" rel="noreferrer">
+              Instagram
+            </a>{" "}
+            |{" "}
+            <a href="https://youtube.com/narayandojostemclub" target="_blank" rel="noreferrer">
+              YouTube
+            </a>{" "}
+            |{" "}
+            <a href="https://twitter.com/narayandojo" target="_blank" rel="noreferrer">
+              Twitter
+            </a>
           </p>
 
         </div>
