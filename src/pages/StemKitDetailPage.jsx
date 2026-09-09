@@ -1,6 +1,8 @@
 import React from "react";
 
 function StemKitDetailPage() {
+  const amazonUrl = "https://www.amazon.in/Generic-ARDUINO-TINKER-KIT/dp/B08HY3QKL9/";
+
   return (
     <div className="bg-white text-[#0f172a]">
 
@@ -27,9 +29,14 @@ function StemKitDetailPage() {
             hands-on STEM Projects.
           </p>
 
-          <button className="mt-10 bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-full text-lg font-semibold transition">
+          <a
+            href={amazonUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-10 bg-orange-500 hover:bg-orange-600 px-8 py-4 rounded-full text-lg font-semibold transition"
+          >
             Buy Now
-          </button>
+          </a>
 
         </div>
 
@@ -347,9 +354,14 @@ function StemKitDetailPage() {
             innovation and problem-solving with the Arduino Tinker STEM Kit.
           </p>
 
-          <button className="bg-white text-orange-600 px-10 py-4 rounded-full text-lg font-bold hover:scale-105 transition">
+          <a
+            href={amazonUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block bg-white text-orange-600 px-10 py-4 rounded-full text-lg font-bold hover:scale-105 transition"
+          >
             Order Now
-          </button>
+          </a>
 
         </div>
 

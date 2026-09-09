@@ -5,7 +5,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
+      className="relative scroll-mt-24 py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
     >
       {/* Floating AI Particles */}
       <div className="absolute inset-0 pointer-events-none">

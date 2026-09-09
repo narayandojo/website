@@ -4,6 +4,38 @@ import { useNavigate } from "react-router-dom";
 function StemKits() {
   const navigate = useNavigate();
 
+  const products = [
+    {
+      title: "Narayandojo Stemclub Tinker Kit",
+      description:
+        "A beginner-friendly STEM kit with an Arduino board, sensors, components and 20+ hands-on projects.",
+      price: "₹2,499",
+      image: "https://m.media-amazon.com/images/I/41qwH-nw3UL._SX425_.jpg",
+      amazonUrl: "https://www.amazon.in/Generic-ARDUINO-TINKER-KIT/dp/B08HY3QKL9/",
+      detailsRoute: "/arduino-kit",
+    },
+    {
+      title: "Narayandojo Stemclub Basic Starter Kit",
+      description:
+        "A compact Arduino UNO-compatible starter kit for learning basic electronics and coding.",
+      price: "₹499",
+      image: "https://m.media-amazon.com/images/I/71XBYNucb7L._SY450_.jpg",
+      amazonUrl: "https://www.amazon.in/Narayandojo-Stemclub-Starter-Compatible-Arduino/dp/B0FMDST793/",
+    },
+    {
+      title: "Narayandojo Stemclub Arduino and Breadboard Holder",
+      description:
+        "A pack of five wooden holders designed to keep Arduino boards and breadboards organised while prototyping.",
+      price: "₹500",
+      image: "https://m.media-amazon.com/images/I/81-w+aoFnxL._SX522_.jpg",
+      amazonUrl: "https://www.amazon.in/Narayandojo-Stemclub-Arduino-Breadboard-Holder/dp/B08K5FRY9L/",
+    },
+  ];
+
+  const buyOnAmazon = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section
       id="shop"
@@ -40,161 +72,50 @@ function StemKits() {
       </div>
 
       {/* Cards */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-        {/* Card 1 */}
-        <div
-          onClick={() => navigate("/arduino-kit")}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
-        >
-          <img
-            src="/kit1.png"
-            alt="Arduino Kit"
-            className="w-full h-52 object-cover group-hover:scale-105 transition duration-300"
-          />
+        {products.map((product) => (
+          <article
+            key={product.title}
+            className="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
+          >
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-full h-56 object-contain bg-gray-50 group-hover:scale-105 transition duration-300"
+            />
 
-          <div className="p-6">
+            <div className="p-6 flex flex-col h-[310px]">
+              <h3 className="text-xl font-semibold mb-3">{product.title}</h3>
 
-            <h3 className="text-xl font-semibold mb-3">
-              Arduino Tinker Kit
-            </h3>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
+                {product.description}
+              </p>
 
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
-              Complete electronics kit with Arduino board, LEDs, wires and
-              beginner-friendly project guide.
-            </p>
+              <p className="text-blue-600 text-2xl font-bold mb-5">
+                {product.price}
+              </p>
 
-            <p className="text-blue-600 text-2xl font-bold mb-5">
-              ₹1,499
-            </p>
+              <div className="mt-auto flex gap-3">
+                {product.detailsRoute && (
+                  <button
+                    onClick={() => navigate(product.detailsRoute)}
+                    className="flex-1 py-3 rounded-xl border border-blue-500 text-blue-600 font-semibold hover:bg-blue-50 transition"
+                  >
+                    Know More
+                  </button>
+                )}
 
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate("/arduino-kit");
-              }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-orange-400 text-white font-semibold hover:scale-105 transition"
-            >
-              Add to Cart
-            </button>
-
-          </div>
-        </div>
-
-        {/* Card 2 */}
-        <div
-          onClick={() => navigate("/robotics-kit")}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
-        >
-          <img
-            src="/kit2.png"
-            alt="Robotics Kit"
-            className="w-full h-52 object-cover group-hover:scale-105 transition duration-300"
-          />
-
-          <div className="p-6">
-
-            <h3 className="text-xl font-semibold mb-3">
-              Robotics Builder Kit
-            </h3>
-
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
-              Build your own robot car with motors, sensors and exciting STEM
-              activities.
-            </p>
-
-            <p className="text-blue-600 text-2xl font-bold mb-5">
-              ₹2,499
-            </p>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate("/robotics-kit");
-              }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-orange-400 text-white font-semibold hover:scale-105 transition"
-            >
-              Add to Cart
-            </button>
-
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div
-          onClick={() => navigate("/ai-kit")}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
-        >
-          <img
-            src="/kit3.png"
-            alt="AI Kit"
-            className="w-full h-52 object-cover group-hover:scale-105 transition duration-300"
-          />
-
-          <div className="p-6">
-
-            <h3 className="text-xl font-semibold mb-3">
-              AI Explorer Kit
-            </h3>
-
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
-              Raspberry Pi based kit packed with AI experiments and tutorials.
-            </p>
-
-            <p className="text-blue-600 text-2xl font-bold mb-5">
-              ₹3,299
-            </p>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate("/ai-kit");
-              }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-orange-400 text-white font-semibold hover:scale-105 transition"
-            >
-              Add to Cart
-            </button>
-
-          </div>
-        </div>
-
-        {/* Card 4 */}
-        <div
-          onClick={() => navigate("/web-kit")}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
-        >
-          <img
-            src="/kit4.png"
-            alt="Web Development Kit"
-            className="w-full h-52 object-cover group-hover:scale-105 transition duration-300"
-          />
-
-          <div className="p-6">
-
-            <h3 className="text-xl font-semibold mb-3">
-              Web Development Kit
-            </h3>
-
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
-              Learn HTML, CSS and JavaScript through fun hands-on web projects.
-            </p>
-
-            <p className="text-blue-600 text-2xl font-bold mb-5">
-              ₹999
-            </p>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate("/web-kit");
-              }}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-orange-400 text-white font-semibold hover:scale-105 transition"
-            >
-              Add to Cart
-            </button>
-
-          </div>
-        </div>
+                <button
+                  onClick={() => buyOnAmazon(product.amazonUrl)}
+                  className="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-orange-400 text-white font-semibold hover:scale-105 transition"
+                >
+                  Buy Now
+                </button>
+              </div>
+            </div>
+          </article>
+        ))}
 
       </div>
     </section>

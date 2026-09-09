@@ -40,11 +40,29 @@ function Hero() {
           {/* Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
-            <button className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-orange-400 px-8 py-3 rounded-full font-semibold hover:scale-105 transition">
+            <button
+              onClick={() => {
+                const contactSection = document.getElementById("contact");
+
+                contactSection?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }}
+             className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-orange-400 px-8 py-3 rounded-full font-semibold hover:scale-105 transition">
               Join Now →
             </button>
 
-            <button className="w-full sm:w-auto border border-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition">
+            <button
+              onClick={() => {
+                  const contactSection = document.getElementById("programs");
+
+                  contactSection?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }} 
+              className="w-full sm:w-auto border border-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition">
               Explore Programs
             </button>
 
