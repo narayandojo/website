@@ -95,10 +95,10 @@ function Navbar() {
           </li>
 
           <li
-            onClick={() => goToSection("shop")}
+            onClick={() => goToSection("projects")}
             className="cursor-pointer hover:text-blue-400 transition"
           >
-            Shop
+            Projects
           </li>
 
           <li
@@ -147,7 +147,7 @@ function Navbar() {
             ["Home", "home"],
             ["About", "/about"],
             ["Services", "services"],
-            ["Shop", "shop"],
+            ["Projects", "projects"],
             ["Activities", "activities"],
             ["Contact", "contact"],
           ].map(([label, id]) => (
