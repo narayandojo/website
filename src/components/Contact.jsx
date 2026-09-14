@@ -2,6 +2,22 @@ import React from "react";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+    const whatsappMessage = `Hello, I would like to get in touch.\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
+
+    window.open(
+      `https://wa.me/917248046685?text=${encodeURIComponent(whatsappMessage)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <section
       id="contact"
@@ -38,31 +54,46 @@ function Contact() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 px-6 relative z-10">
 
         {/* Contact Form */}
-        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg space-y-5">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-6 md:p-8 rounded-2xl shadow-lg space-y-5"
+        >
 
           <input
             type="text"
+            name="name"
             placeholder="Your Name"
+            aria-label="Your Name"
+            required
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
 
           <input
             type="email"
+            name="email"
             placeholder="Your Email"
+            aria-label="Your Email"
+            required
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-purple-400"
           />
 
           <textarea
+            name="message"
             placeholder="Your Message"
+            aria-label="Your Message"
             rows="5"
+            required
             className="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-orange-400"
           ></textarea>
 
-          <button className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-orange-400 text-white px-8 py-3 rounded-lg font-semibold hover:scale-105 transition duration-300 shadow-lg">
-            Send Message
+          <button
+            type="submit"
+            className="w-full md:w-auto bg-gradient-to-r from-blue-500 to-orange-400 text-white px-8 py-3 rounded-lg font-semibold hover:scale-105 transition duration-300 shadow-lg"
+          >
+            Send via WhatsApp
           </button>
 
-        </div>
+        </form>
 
         {/* Contact Info */}
         <div className="space-y-6">
@@ -123,4 +154,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default Contact;

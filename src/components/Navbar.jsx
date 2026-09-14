@@ -78,17 +78,20 @@ function Navbar() {
           </li>
 
           <li
-            onClick={() => goToSection("about")}
+            onClick={() => {
+              navigate("/about");
+              setMenuOpen(false);
+            }}
             className="cursor-pointer hover:text-blue-400 transition"
           >
             About
           </li>
 
           <li
-            onClick={() => goToSection("programs")}
+            onClick={() => goToSection("services")}
             className="cursor-pointer hover:text-blue-400 transition"
           >
-            Programs
+            Services
           </li>
 
           <li
@@ -142,15 +145,22 @@ function Navbar() {
 
           {[
             ["Home", "home"],
-            ["About", "about"],
-            ["Programs", "programs"],
+            ["About", "/about"],
+            ["Services", "services"],
             ["Shop", "shop"],
             ["Activities", "activities"],
             ["Contact", "contact"],
           ].map(([label, id]) => (
             <li
               key={id}
-              onClick={() => goToSection(id)}
+              onClick={() => {
+                if (id.startsWith("/")) {
+                  navigate(id);
+                  setMenuOpen(false);
+                } else {
+                  goToSection(id);
+                }
+              }}
               className="py-4 text-center text-lg border-b border-gray-800 hover:bg-gray-900 hover:text-blue-400 cursor-pointer transition"
             >
               {label}

@@ -19,6 +19,10 @@ a::after {
 a:hover::after {
   width: 100%;
 }
+
+.buy-now-link::after {
+  display: none;
+}
 @keyframes bounceSlow {
   0%,100% {
     transform: translateY(0);

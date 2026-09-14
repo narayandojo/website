@@ -5,8 +5,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PaperBatPage from "./pages/PaperBatPage";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Programs from "./components/Programs";
 import StemKits from "./components/StemKits";
 import Activities from "./components/Activities";
 import Testimonials from "./components/Testimonials";
@@ -56,8 +54,6 @@ function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Programs />
       <Services />
       <StemKits />
       <ATLSection />
