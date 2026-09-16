@@ -55,9 +55,9 @@ function Hero() {
 
             <button
               onClick={() => {
-                  const contactSection = document.getElementById("programs");
+                  const servicesSection = document.getElementById("services");
 
-                  contactSection?.scrollIntoView({
+                  servicesSection?.scrollIntoView({
                     behavior: "smooth",
                     block: "start",
                   });

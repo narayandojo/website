@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Navigate, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import SeniorCitizenKitPage from "./pages/SeniorCitizenKitPage";
 import Navbar from "./components/Navbar";
@@ -110,6 +110,8 @@ function App() {
         <Route path="/indian-flag-hoisting" element={<IndianFlagHoistingPage />}/>
         <Route path="/perfect-circle-drawer"element={<PerfectCircleDrawerPage />}/>
         <Route path="/what-is-stem"element={<WhatIsSTEMPage />}/>
+
+        <Route path="*" element={<Navigate to="/" replace />} />
         
 
       </Routes>

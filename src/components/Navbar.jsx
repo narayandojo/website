@@ -95,7 +95,10 @@ function Navbar() {
           </li>
 
           <li
-            onClick={() => goToSection("projects")}
+            onClick={() => {
+              navigate("/diy");
+              setMenuOpen(false);
+            }}
             className="cursor-pointer hover:text-blue-400 transition"
           >
             Projects
@@ -147,7 +150,7 @@ function Navbar() {
             ["Home", "home"],
             ["About", "/about"],
             ["Services", "services"],
-            ["Projects", "projects"],
+            ["Projects", "/diy"],
             ["Activities", "activities"],
             ["Contact", "contact"],
           ].map(([label, id]) => (
